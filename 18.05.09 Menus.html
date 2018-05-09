@@ -1,0 +1,63 @@
+<HTML>
+
+    <script>
+        
+        function colourBlue(id){
+            document.getElementById(id).style.backgroundColor = "blue";
+        }
+        
+        function colourWhite(id){
+            document.getElementById(id).style.backgroundColor = "white";
+        }
+        
+        function showCountriesMenu(){
+            document.getElementById("UK").style.visibility = "visible";
+            document.getElementById("USA").style.visibility = "visible";
+            document.getElementById("India").style.visibility = "visible";
+            document.getElementById("South Africa").style.visibility = "visible";
+        }
+        
+        function hideCountriesMenu(){
+            document.getElementById("UK").style.visibility = "hidden";
+            document.getElementById("USA").style.visibility = "hidden";
+            document.getElementById("India").style.visibility = "hidden";
+            document.getElementById("South Africa").style.visibility = "hidden";
+        }
+        
+        function showSportsMenu(){
+            document.getElementById("Cricket").style.visibility = "visible";
+            document.getElementById("Football").style.visibility = "visible";
+            document.getElementById("Tennis").style.visibility = "visible";
+            document.getElementById("Boxing").style.visibility = "visible";
+        }
+        
+        function hideSportsMenu(){
+            document.getElementById("Cricket").style.visibility = "hidden";
+            document.getElementById("Football").style.visibility = "hidden";
+            document.getElementById("Tennis").style.visibility = "hidden";
+            document.getElementById("Boxing").style.visibility = "hidden";
+        }
+        
+    </script>
+    
+    <body>
+    
+        <div id="countriesMenu" style="position:absolute; top:0; left:0" onmouseenter="showCountriesMenu()" onmouseleave="hideCountriesMenu()">
+            Countries
+            <a href="https://en.wikipedia.org/wiki/United_Kingdom"><div id="UK" onmouseenter="colourBlue('UK')" onmouseleave="colourWhite('UK')" style=visibility:hidden>UK</div></a>
+            <a href="https://en.wikipedia.org/wiki/US"><div id="USA" onmouseenter="colourBlue('USA')" onmouseleave="colourWhite('USA')" style=visibility:hidden>USA</div></a>
+            <a href="https://en.wikipedia.org/wiki/India"><div id="India" onmouseenter="colourBlue('India')" onmouseleave="colourWhite('India')" style=visibility:hidden>India</div></a>
+            <a href="https://en.wikipedia.org/wiki/South_Africa"><div id="South Africa" onmouseenter="colourBlue('South Africa')" onmouseleave="colourWhite('South Africa')" style=visibility:hidden>South Africa</div></a>
+        </div>
+        
+        <div id="sportsMenu" style="position:absolute; top:0; left:200" onmouseenter="showSportsMenu()" onmouseleave="hideSportsMenu()">
+            Sports
+            <div id="Cricket" onmouseenter="colourBlue('Cricket')" onmouseleave="colourWhite('Cricket')" style=visibility:hidden>Cricket</div>
+            <div id="Football" onmouseenter="colourBlue('Football')" onmouseleave="colourWhite('Football')" style=visibility:hidden>Football</div>
+            <div id="Tennis" onmouseenter="colourBlue('Tennis')" onmouseleave="colourWhite('Tennis')" style=visibility:hidden>Tennis</div>
+            <div id="Boxing" onmouseenter="colourBlue('Boxing')" onmouseleave="colourWhite('Boxing')" style=visibility:hidden>Boxing</div>
+        </div>
+        
+    </body>
+    
+</HTML>

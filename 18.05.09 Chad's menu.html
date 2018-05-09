@@ -1,0 +1,35 @@
+</html>
+    <script>
+        function visibleMenu(menu){
+            var spans = menu.getElementsByTagName('span')
+            for (span of spans){
+                span.style.display="block";
+            }
+        }
+        function hideMenu(menu){
+            var spans = menu.getElementsByTagName('span')
+            for (span of spans){
+                span.style.display="none";
+            }
+        }
+    </script>
+    <body>
+        <span onmouseenter=visibleMenu(this)><h1>Countries</h1></br>
+            <span id="countries" name="countries" style="display:none" onmouseleave=hideMenu(this)>
+                <span><a href="https://en.wikipedia.org/wiki/South_Africa">South Africa</a></span></br>
+                <span><a href="https://en.wikipedia.org/wiki/Namibia">Namibia</a></span></br>
+                <span><a href="https://en.wikipedia.org/wiki/Botswana">Botswana</a></span></br>
+                <span><a href="https://en.wikipedia.org/wiki/Mozambique">Mozambique</a></span></br>
+            </span>
+        </span>
+
+        <span onmouseenter=visibleMenu(this)><h1>Sports</h1></br>
+            <span id="sports" name="sports" style="display:none" onmouseleave=hideMenu(this)>
+                <span><a href="https://en.wikipedia.org/wiki/Football">Football</a></span></br>
+                <span><a href="https://en.wikipedia.org/wiki/Basketball">Basketball</a></span></br>
+                <span><a href="https://en.wikipedia.org/wiki/Tennis">Tennis</a></span></br>
+                <span><a href="https://en.wikipedia.org/wiki/Ultimate_(sport)">Ultimate</a></span></br>
+            </span>
+        </span>
+    </body>
+<html> 

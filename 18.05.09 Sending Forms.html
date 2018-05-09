@@ -1,0 +1,31 @@
+<HTML>
+    <SCRIPT>
+        function check(){
+            document.getElementById("noName").style.visibility = "hidden";
+            document.getElementById("noPassword").style.visibility = "hidden";
+            if(document.getElementById("N").value=="" && document.getElementById("P").value==""){
+                document.getElementById("noName").style.visibility = "visible";
+                document.getElementById("noPassword").style.visibility = "visible";
+                return false;
+            }
+            if(document.getElementById("N").value==""){
+                document.getElementById("noName").style.visibility = "visible";
+                return false;
+            }
+            if(document.getElementById("P").value==""){
+                document.getElementById("noPassword").style.visibility = "visible";
+                return false;
+            }
+        }
+        function blockSpecialChar(e){
+            var k;
+            document.all ? k = e.keyCode : k = e.which;
+            return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
+        }
+    </SCRIPT>
+    <FORM action="18.05.09 Sending Forms Test.html" onsubmit="return check()">
+        Name: <input type="Text" name="N" id="N" onkeypress="return blockSpecialChar(event)"><span id="noName" style="color:red; visibility:hidden">**Name is missing**</span></br>
+        Password: <input type="Password" name="P" id="P" onkeypress="return blockSpecialChar(e)"><span id="noPassword" style="color:red; visibility:hidden">**Password is missing**</span></br>
+        <input type="submit">
+    </FORM>
+</HTML>

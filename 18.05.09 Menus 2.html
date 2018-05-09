@@ -1,0 +1,55 @@
+<HTML>
+
+    <script>
+        
+        function colourBlue(id){
+            document.getElementById(id).style.backgroundColor = "blue";
+        }
+        
+        function colourWhite(id){
+            document.getElementById(id).style.backgroundColor = "white";
+        }
+        
+        function showMenu(menu){
+            var divs = menu.getElementsByTagName('div')
+            for(div of divs){
+                console.log(div);
+                div.style.visibility = "visible";   
+            }
+        }
+        
+        function hideMenu(menu){
+            var divs = menu.getElementsByTagName('div')
+            for(div of divs){
+                console.log(div);
+                div.style.visibility = "hidden";   
+            }
+        }
+
+    </script>
+    
+    <body>
+    
+        <div style="position:absolute; top:0; left:0" onmouseenter="showMenu(this)">
+            Countries
+            <div style=visibility:hidden onmouseleave="hideMenu(this)">
+                <a href="https://en.wikipedia.org/wiki/United_Kingdom"><div id="UK" onmouseenter="colourBlue('UK')" onmouseleave="colourWhite('UK')" >UK</div></a>
+                <a href="https://en.wikipedia.org/wiki/US"><div id="USA" onmouseenter="colourBlue('USA')" onmouseleave="colourWhite('USA')">USA</div></a>
+                <a href="https://en.wikipedia.org/wiki/India"><div id="India" onmouseenter="colourBlue('India')" onmouseleave="colourWhite('India')">India</div></a>
+                <a href="https://en.wikipedia.org/wiki/South_Africa"><div id="South Africa" onmouseenter="colourBlue('South Africa')" onmouseleave="colourWhite('South Africa')">South Africa</div></a>
+            </div>
+        </div>
+        
+        <div style="position:absolute; top:0; left:200" onmouseenter="showMenu(this)">
+            Sports
+            <div style=visibility:hidden onmouseleave="hideMenu(this)">
+                <div id="Cricket" onmouseenter="colourBlue('Cricket')" onmouseleave="colourWhite('Cricket')" style=visibility:hidden>Cricket</div>
+                <div id="Football" onmouseenter="colourBlue('Football')" onmouseleave="colourWhite('Football')" style=visibility:hidden>Football</div>
+                <div id="Tennis" onmouseenter="colourBlue('Tennis')" onmouseleave="colourWhite('Tennis')" style=visibility:hidden>Tennis</div>
+                <div id="Boxing" onmouseenter="colourBlue('Boxing')" onmouseleave="colourWhite('Boxing')" style=visibility:hidden>Boxing</div>
+            </div>
+        </div>
+        
+    </body>
+    
+</HTML>

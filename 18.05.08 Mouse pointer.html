@@ -1,0 +1,14 @@
+<HTML>
+    <SCRIPT>
+        function XYZ(){
+            document.getElementById("QA").style.top = window.event.clientY;
+            document.getElementById("QA").style.left = window.event.clientX;
+            document.getElementById("QA").style.fontSize = window.innerHeight - window.event.clientY;
+        }
+    </SCRIPT>
+    <Body onmousemove="XYZ()">
+        <span id="QA" style="position:absolute; top:100; left:500">
+            QA Consulting
+        </span>
+    </Body>
+</HTML>

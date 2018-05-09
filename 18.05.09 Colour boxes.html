@@ -1,0 +1,41 @@
+<HTML>
+    <SCRIPT>
+        function XYZ(){
+            document.getElementById("QA").style.top = window.event.clientY;
+            document.getElementById("QA").style.left = window.event.clientX;
+        }
+        function changeFontSize(){
+            if(event.altKey==true){
+                 document.getElementById("QA").style.fontSize = parseInt(document.getElementById("QA").style.fontSize)+1;
+            }
+            if(event.ctrlKey==true){
+                document.getElementById("QA").style.fontSize = parseInt(document.getElementById("QA").style.fontSize)-1;   
+            }
+        }
+        function changeColor(color){
+            document.getElementById("QA").style.color = color;
+        }
+        function changeText(){
+            window.document.getElementById("QA").innerHTML = window.document.getElementById("T1").value;
+        }
+    </SCRIPT>
+    <Body onmousemove="XYZ()" onkeydown="changeFontSize()">
+        <input type="text" id="T1" onmouseleave="changeText()" style="display:block; margin:0 auto"/>
+        
+        <span id="Red" style="position:absolute; top:0; left:0; background-color: red; width:50; height:50" onmouseenter="changeColor('red')">
+        </span>
+
+        <span id="Green" style="position:absolute; top:0; right:0; background-color:green; width:50; height:50" onmouseenter="changeColor('green')">
+        </span>
+
+        <span id="Blue" style="position:absolute; bottom:0; left:0; background-color:blue; width:50; height:50" onmouseenter="changeColor('blue')">
+        </span>
+
+        <span id="Yellow" style="position:absolute; bottom:0; right:0; background-color: yellow; width:50; height:50" onmouseenter="changeColor('yellow')">
+        </span>
+        
+        <span id="QA" style="position:absolute; top:100; left:500; font-size:20">
+            QA Consulting
+        </span>
+    </Body>
+</HTML>

@@ -1,0 +1,35 @@
+<HTML>
+    <SCRIPT>
+        function Add(){
+            if(window.document.Form1.T1.value==""){
+                window.alert("First number is missing");
+                window.document.Form1.T1.focus();
+            }
+            else if(window.document.Form1.T2.value==""){
+                window.alert("Second number is missing");
+                window.document.Form1.T1.focus();
+            }
+            else{
+                var doc = window.document;
+                var myForm = doc.Form1;
+                // same as: var myForm = window.document.Form1;
+                var T1 = myForm.T1;
+                // same as: var T1 = window.document.Form1.T1;
+                var T2 = myForm.T2;
+                // same as: var T2 = window.document.Form1.T2;
+                var T3 = myForm.T3;
+                // same as: var T3 = window.document.Form1.T3;
+                var no1 = parseInt(T1.value);
+                var no2 = parseInt(T2.value);
+                var Result = no1 + no2;
+                T3.value = Result;
+            }
+        }
+    </SCRIPT>
+    <FORM name="Form1">
+        Number 1: <input type="text" name="T1"/></BR>
+        Number 2: <input type="text" name="T2"/></BR>
+        <input type="Button" value="+" onclick="Add()" name="B">
+        Result: <input type="text" name="T3">
+    </FORM>
+</HTML>

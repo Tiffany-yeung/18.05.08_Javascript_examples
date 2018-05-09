@@ -1,0 +1,27 @@
+<HTML>
+    <SCRIPT>
+        function FirstEmptyBox(){
+            for(let j=0; j<window.document.forms.length; j++){
+                for(let i=0; i<window.document.forms[j].elements.length; i++){
+                    if(window.document.forms[j].elements[i].value==""){
+                        window.alert("Textbox is missing");
+                        window.document.forms[j].elements[i].focus();
+                        return;
+                    }
+                }
+            }
+        }
+    </SCRIPT>
+    <FORM>
+        Textbox 1: <input type="text"/></BR>
+        Textbox 2: <input type="text"/></BR>
+        Textbox 3: <input type="text"/></BR>
+    </FORM>
+
+    <FORM>
+        Textbox 4: <input type="text"/></BR>
+        Textbox 5: <input type="text"/></BR>
+        Textbox 6: <input type="text"/></BR>
+    </FORM>
+    <input type="Button" value="Check" onclick="FirstEmptyBox()">
+</HTML>
