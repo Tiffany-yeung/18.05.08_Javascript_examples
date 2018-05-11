@@ -1,0 +1,25 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var data = function($scope){
+            $scope.records=[
+                {regno:21, name:'Peter'},
+                {regno:5671, name:'Snake'},
+                {regno:75, name:'John'}];
+            }
+        var M1 = angular.module("one",[]);
+        M1.controller("ctrl1", data);
+    </SCRIPT>
+    <DIV ng-controller="ctrl1">
+        <TABLE>
+            <TR>
+                <TH>Registration</TH>
+                <TH>Name</TH>
+            </TR>
+            <TR ng-repeat="rec in records">
+                <TD>{{rec.regno}}</TD>
+                <TD>{{rec.name}}</TD>
+            </TR>
+        </TABLE>
+    </DIV>
+</HTML>

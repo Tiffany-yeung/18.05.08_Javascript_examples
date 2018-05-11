@@ -1,0 +1,46 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var F = function($scope){
+            $scope.records=[{id:75, product:'Coke', quantity:56, price:1.70},
+                        {id:92, product:'7Up', quantity:42, price:1.92},
+                        {id:195, product:'Fanta', quantity:973, price:2}
+                        ];
+            $scope.field='Product';
+            $scope.order=true;
+        };
+        var M1 = angular.module("one",[]);
+        M1.controller("ctrl1", F);
+    </SCRIPT>
+    <DIV ng-controller="ctrl1">
+        <TABLE>
+            <TR>
+                <TH>Serial No.</TH>
+                <TH ng-click="field='id'; order=!order">ID</TH>
+                <TH ng-click="field='product'; order=!order">Product</TH>
+                <TH ng-click="field='quantity'; order=!order">Quantity</TH>
+                <TH ng-click="field='price'; order=!order">Price</TH>
+                <TH ng-click="field='quantity*price'; order=!order">Amount</TH>
+                <TH ng-click="field='price*15/100'; order=!order">VAT</TH>
+                <TH ng-click="field='(quantity*price)-(price*15/100)'; order=!order">Net Cost</TH>
+            </TR>
+            Sorted by: {{field}}<br>
+            Ordered by: {{order}} (
+            <span ng-if="order">descending order</span>
+            <span ng-if="!order">ascending order</span>
+            )
+            
+            <TR ng-repeat="d in records|orderBy:field:order">
+                <TD>{{$index+1}}</TD>
+                <TD>{{d.id}}</TD>
+                <TD>{{d.product}}</TD>
+                <TD>{{d.quantity}}</TD>
+                <TD>{{d.price}}</TD>
+                <TD>{{d.quantity*d.price}}</TD>
+                <TD>{{d.price*15/100}}</TD>
+                <TD>{{((d.quantity*d.price)-(d.price*15/100)).toFixed(2)}}</TD>
+                
+            </TR>
+        </TABLE>
+    </DIV>
+</HTML>

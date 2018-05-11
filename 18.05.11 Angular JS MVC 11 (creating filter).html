@@ -1,0 +1,41 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var Fun = function($scope){
+            $scope.records=[{id:21, name:'Peter', gender:'m'},
+                        {id:56, name:'Smith', gender:'m'},
+                        {id:75, name:'Alice', gender:'f'},
+                        {id:79, name:'Snake', gender:'k'}
+                        ];
+            };
+        var M = angular.module("one",[]);
+        M.controller("ctrl1", Fun);
+        
+        M.filter("Gender", function(){
+           var showGender=function(x){
+               var G;
+               if(x=='m') G='Male';
+               else if(x=='f') G='Female';
+               else G='Invalid';
+               return G;
+           }
+           return showGender;
+        });
+    </SCRIPT>
+    
+    <DIV ng-controller="ctrl1">
+        <TABLE>
+            <TR>
+                <TH>ID</TH>
+                <TH>Name</TH>
+                <TH>Gender</TH>
+            </TR>
+            
+            <TR ng-repeat="r in records">
+                <TD>{{r.id}}</TD>
+                <TD>{{r.name}}</TD>
+                <TD>{{r.gender|Gender}}</TD>
+            </TR>
+        </TABLE>
+    </DIV>
+</HTML>

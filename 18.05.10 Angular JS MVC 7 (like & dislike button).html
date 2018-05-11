@@ -1,0 +1,44 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var data = function($scope){
+            $scope.data=[{subject:'Java', likes:0, dislikes:0},
+                        {subject:'VB', likes:0, dislikes:0},
+                        {subject:'HTML', likes:0, dislikes:0}
+                        ];
+            $scope.likes=function(record){
+                record.likes++;
+            }
+            $scope.dislikes=function(record){
+                record.dislikes++;
+            }
+        };
+        var M1 = angular.module("one",[]);
+        M1.controller("ctrl1", data);
+    </SCRIPT>
+    <DIV ng-controller="ctrl1">
+        <TABLE>
+            <TR>
+                <TH>Subject</TH>
+                <TH>Likes</TH>
+                <TH>Dislikes</TH>
+                <TH>Result</TH>
+                <TH>Button</TH>
+                <TH>Button</TH>
+            </TR>
+            
+            <TR ng-repeat="d in data">
+                <TD>{{d.subject}}</TD>
+                <TD>{{d.likes}}</TD>
+                <TD>{{d.dislikes}}</TD>
+                
+                <TD ng-if="d.likes>d.dislikes">Likes</TD>
+                <TD ng-if="d.likes<d.dislikes">Dislikes</TD>
+                <TD ng-if="d.likes==d.dislikes">Same</TD>
+                
+                <TD><input type="button" value="Likes" ng-click="likes(d)"></TD>
+                <TD><input type="button" value="Dislikes" ng-click="dislikes(d)"></TD>
+            </TR>
+        </TABLE>
+    </DIV>
+</HTML>

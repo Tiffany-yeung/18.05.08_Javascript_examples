@@ -1,0 +1,25 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var F = function($scope){
+            $scope.Regno=51;
+            $scope.name="Peter";
+            $scope.address="London";
+            $scope.msg=function(){
+                return "Hello my friends";
+            }
+            $scope.add=function(A,B){
+                return A+B;
+            }
+        }
+        var M1 = angular.module("one",[]);
+        M1.controller("ctrl1", F);
+    </SCRIPT>
+    <DIV ng-controller="ctrl1">
+        Registration no: {{Regno}}<BR>
+        Name: {{name}}<BR>
+        Address: {{address}}<BR>
+        Message: {{msg()}}<BR>
+        Sum: {{add(7,5)}}<BR>
+    </DIV>
+</HTML>

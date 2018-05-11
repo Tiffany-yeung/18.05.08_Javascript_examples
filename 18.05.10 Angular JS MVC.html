@@ -1,0 +1,12 @@
+<HTML ng-app="XYZ">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var M = angular.module("XYZ",[]);
+        M.controller("ctrl1", function($scope){
+                     $scope.name="The Shafeeq";
+                     });
+    </SCRIPT>
+    <DIV ng-controller="ctrl1">
+        {{name}}
+    </DIV>
+</HTML>

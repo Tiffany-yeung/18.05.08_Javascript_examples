@@ -1,0 +1,44 @@
+<html ng-app="app1">
+<script src="angular.js"></script>
+
+<script>
+
+	var controller=function($scope){
+		$scope.message="THE SHAFEEQ";
+	}
+	var Application=angular.module("app1",[]);
+	Application.controller("ctrl",controller);
+</script>
+Upper Case: {{"THE Shafeeq"|lowercase}} <br>
+Lower case: {{"THE Shafeeq"|uppercase}} <br>
+-----------------------------------------------<br>
+Number format: {{12345.12365|number:3}}<br>
+Number format: {{12345.1|number:3}}<br>
+-----------------------------------------------<br>
+Default Currency: {{34|currency}}<br>
+Pound Currency: {{34|currency: '&#x20A4'}}<br>
+Pound Currency: {{34|currency: '&#x20A4':0}}<br>
+Pound Currency: {{34|currency: '&#x20A4':4}}<br>
+-----------------------------------------------<br>
+Date:{{12345|date}}<br>
+Date(date and time): {{12345|date:'medium'}}<br>
+Date(only Date): {{12345|date:'mediumDate'}}<br>
+Date(only 4 digit Year): {{12345|date:'yyyy'}}<br>
+Date(only 2 digit Year): {{12345|date:'yy'}}<br>
+Date(only digital month): {{12345|date:'M'}}<br>
+Date(only digital month): {{12345|date:'MM'}}<br>
+<br>
+Date(only String month): {{12345|date:'MMMM'}}<br>
+Date(Day of the month): {{12345|date:'d'}}<br>
+Date(Day of the month): {{12345|date:'dd'}}<br>
+Date(Day in a week): {{12345|date:'EEEE'}}<br>
+Date(Day in a week): {{12345|date:'EEE'}}<br>
+Date(week of the Year): {{12345|date:'ww'}}<br>
+Date(week of the Year): {{12345|date:'w'}}<br>
+Date(my date): {{12345|date:'yyyy-yy-MM'}}<br>
+Date(my date): {{12345|date:'dd-MMMM-yyyy'}}<br>
+<br>
+<div ng-controller="ctrl">
+{{3+4}}
+</div>
+</html>

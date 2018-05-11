@@ -1,0 +1,37 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var F = function($scope){
+            $scope.records=[{regno:1, name:'Peter', address:'London', marks:56},
+                        {regno:2, name:'Smith', address:'Manchester', marks:43},
+                        {regno:3, name:'John', address:'Liverpool', marks:78}
+                        ];
+            };
+        var M1 = angular.module("one",[]);
+        M1.controller("ctrl1", F);
+    </SCRIPT>
+    
+    <DIV ng-controller="ctrl1">
+        <input type="checkbox" ng-model="match"/>
+        <input type="text" ng-model="srch.regno"/>
+        <input type="text" ng-model="srch.name"/>
+        <input type="text" ng-model="srch.address"/>
+        <input type="text" ng-model="srch.marks"/>
+        
+        <TABLE>
+            <TR>
+                <TH>Reg No.</TH>
+                <TH>Name</TH>
+                <TH>Address</TH>
+                <TH>Marks</TH>
+            </TR>
+            
+            <TR ng-repeat="d in records|filter:srch:match">
+                <TD>{{d.regno}}</TD>
+                <TD>{{d.name}}</TD>
+                <TD>{{d.address}}</TD>
+                <TD>{{d.marks}}</TD>
+            </TR>
+        </TABLE>
+    </DIV>
+</HTML>
