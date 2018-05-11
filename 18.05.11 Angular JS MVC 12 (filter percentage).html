@@ -1,0 +1,47 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var F = function($scope){
+            $scope.records=[{id:2, name:'Tiff', marks:110},
+                        {id:5, name:'Alex', marks:150},
+                        {id:7, name:'Hayden', marks:56}
+                        ];
+        };
+        var M = angular.module("one",[]);
+        M.controller("ctrl1", F);
+        
+        M.filter("Grade", function(){
+           var showGrade=function(x){
+               var G;
+               if(x<=100&&x>=90) G='A+';
+               else if(x<90&&x>=80) G='A';
+               else if(x<80&&x>=70) G='B';
+               else if(x<70&&x>=60) G='C';
+               else if(x<60&&x>=0) G='Fail';
+               else G='Invalid';
+               return G;
+           }
+           return showGrade;
+        });
+    </SCRIPT>
+    
+    <DIV ng-controller="ctrl1">
+        <TABLE>
+            <TR>
+                <TH>ID</TH>
+                <TH>Name</TH>
+                <TH>Marks</TH>
+                <TH>Percentage</TH>
+                <TH>Grade</TH>
+            </TR>
+            
+            <TR ng-repeat="r in records">
+                <TD>{{r.id}}</TD>
+                <TD>{{r.name}}</TD>
+                <TD>{{r.marks}}</TD>
+                <TD>{{r.marks/150*100|number:2}}</TD>
+                <TD>{{r.marks/150*100|Grade}}</TD>
+            </TR>
+        </TABLE>
+    </DIV>
+</HTML>
