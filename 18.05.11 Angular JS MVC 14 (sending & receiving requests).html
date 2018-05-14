@@ -1,0 +1,24 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var F1 = function($scope,$http){
+            var A=$http({
+                method:"GET",
+                url:"https://jsonplaceholder.typicode.com/post/1"
+            })
+            A.then(function(response){
+                $scope.records=response.data;
+            })
+        };
+        var M = angular.module("one",[]);
+        M.controller("ctrl1", data);
+    </SCRIPT>
+    <DIV ng-controller="ctrl">
+        DATAAAAAA: {{records}}
+        <BR>.................
+        <BR> User ID={{records.userId}}
+        <BR> ID={{records.id}}
+        <BR> Title={{records.title}}
+        <BR> Body={{records.body}}
+    </DIV>
+</HTML>

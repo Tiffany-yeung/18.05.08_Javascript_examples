@@ -1,0 +1,29 @@
+<HTML ng-app="one">
+    <SCRIPT src="angular.js"></SCRIPT>
+    <SCRIPT>
+        var data = function($scope){
+//            $scope.records=[{company:'QA Consulting'}]
+        };
+        var M = angular.module("one",[]);
+        M.controller("ctrl1", data);
+
+        M.directive("abc", function(){
+            return{
+                restrict:'EA',
+                template:"<B>QA CONSULTING</B>"
+            }
+        });
+//        M.directive("def", function(){
+//            return{
+//                restrict:'EA',
+//                templateUrl:"18.05.10 Angular JS MVC 7 (like & dislike button).html"
+//            }
+//        });
+    </SCRIPT>
+    <BODY>
+        <DIV ng-controller="ctrl1">
+            <abc>Testing 1</abc>
+            <def>Testing 2</def>
+        </DIV>
+    </BODY>
+</HTML>
